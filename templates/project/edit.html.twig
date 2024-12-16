@@ -1,0 +1,43 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block body %}
+
+    {% block sidebar %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block nav %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block contentBody %}
+        <div class="container mt-5">
+            <h1>Edit Project</h1>
+            <!-- Directly placed form without the card wrapper -->
+            {{ include('task/_form.html.twig', {'button_label': 'Update'}) }}
+        </div>
+        <style>
+            .container {
+                margin: 0 auto;
+                padding: 20px;
+                display: block; /* Prevent centering */
+            }
+            h1 {
+                color: #1F509A;
+                text-align: left; /* Align the heading to the left */
+                padding-bottom: 5px;
+                font-weight: bold;
+                font-family: 'Montserrat', sans-serif;
+            }
+            .form-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px; /* Adjust space between inputs */
+            }
+
+            .form-group {
+                min-width: 48%; /* Make each input take half the width */
+            }
+        </style>
+    {% endblock %}
+{% endblock %}

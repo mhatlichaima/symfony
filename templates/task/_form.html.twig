@@ -1,0 +1,17 @@
+<div class="form-row">
+    {% for field in form %}
+        {% if field.vars.name != '_token' %}
+            <div class="form-group">
+                {{ form_label(field, null, { 'label_attr': { 'class': 'form-label required' } }) }}
+                {{ form_widget(field, { 'attr': { 'class': 'form-control small-field' } }) }}
+                {{ form_errors(field) }}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="form-actions">
+    <button id="btn-update">{{ button_label|default('Save') }}</button>
+    <button type="button" class="btn-cancel">Cancel</button>
+    <a href="{{ path('app_task_index') }}" class="btn-back">Back to List</a>
+</div>

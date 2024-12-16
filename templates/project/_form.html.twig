@@ -1,0 +1,43 @@
+{{ form_start(form) }}
+
+{% for field in form %}
+    <div class="form-group">
+        {{ form_label(field, null, { 'label_attr': { 'class': 'form-label' } }) }}
+        {{ form_widget(field, { 'attr': { 'class': 'form-control' } }) }}
+        {{ form_errors(field) }}
+    </div>
+{% endfor %}
+
+<div class="form-actions">
+    <button class="btn-update">{{ button_label|default('Save') }}</button>
+    <button type="button" id="btn-cancel">Cancel</button>
+</div>
+<style>
+    .btn-update {
+        background-color: #1F509A; /* Example color */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-update:hover {
+        background-color: #155A8A; /* Hover color */
+    }
+
+    #btn-cancel {
+        background-color: red !important;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #btn-cancel:hover {
+        background-color: darkred !important;
+    }
+</style>
+
+{{ form_end(form) }}
